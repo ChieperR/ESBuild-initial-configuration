@@ -7,6 +7,7 @@ const PORT = Number(process.env.port) || 3000;
 
 (async () => {
     const context = await ESBuild.context(config);
+    await context.watch()
     await context.serve({
         servedir: config.outdir,
         port: PORT,

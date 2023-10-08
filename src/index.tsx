@@ -9,5 +9,7 @@ if (!rootElement) {
     throw new Error('root not found')
 }
 
+new EventSource('/esbuild').addEventListener('change', () => location.reload())
+
 const root = createRoot(rootElement);
 root.render(<App/>);
